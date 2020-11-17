@@ -71,11 +71,6 @@ TEST(PriorityQueue, can_push_in_tail) {
     pq.pop();
 
   EXPECT_EQ(pq.top(), 7);
-
-  /*
-  pq.push(14, 0);
-  pq.push(7, 10);
-  pq.push(4, 0);*/
 }
 
 TEST(PriorityQueue, can_push_in_head_with_eq_priority) {
@@ -93,4 +88,30 @@ TEST(PriorityQueue, can_push_in_head_with_eq_priority) {
     pq.pop();
 
   EXPECT_EQ(pq.top(), 4);
+}
+
+TEST(PriorityQueue, can_check_is_empty_after_def_constructor) {
+  PriorityQueue pq;
+
+  EXPECT_EQ(pq.isEmpty(), true);
+}
+
+TEST(PriorityQueue, can_check_is_empty_any_sample) {
+  PriorityQueue pq;
+
+  pq.push(4, 1);
+  pq.pop();
+
+  EXPECT_EQ(pq.isEmpty(), true);
+}
+
+TEST(PriorityQueue, can_delete_priority_queue) {
+  PriorityQueue pq;
+
+  pq.push(3, 1);
+  pq.push(5, 4);
+  pq.push(7, 4);
+  pq.DelPQueue();
+
+  EXPECT_EQ(pq.isEmpty(), true);
 }
